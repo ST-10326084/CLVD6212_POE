@@ -39,8 +39,7 @@
     <button type="submit" class="btn btn-primary">Signup</button>
 }
 
-@if (ViewBag.FormSubmitted)
+@if (ViewBag.FormSubmitted != null && (bool)ViewBag.FormSubmitted)
 {
     <p>Form submitted successfully!</p>
 }
-
