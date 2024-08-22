@@ -1,4 +1,4 @@
-﻿@model List<Order>
+﻿@model List<CLVD6212_POE.Models.Order>
 
 @{
     ViewBag.Title = "Previous Orders";
@@ -33,14 +33,4 @@ else
             }
         </tbody>
     </table>
-}
-
-@functions {
-    public class Order
-    {
-        public string OrderId { get; set; }
-        public DateTime OrderDate { get; set; }
-        public decimal TotalAmount { get; set; }
-        public string Status { get; set; }
-    }
 }

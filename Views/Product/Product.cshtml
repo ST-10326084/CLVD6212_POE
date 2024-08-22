@@ -1,4 +1,4 @@
-﻿@model List<Product>
+﻿@model List<CLVD6212_POE.Models.Product>
 
 @{
     ViewBag.Title = "Our Collection";
@@ -21,13 +21,3 @@
         }
     </div>
 </div>
-
-@functions {
-    public class Product
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public string ImageUrl { get; set; }
-    }
-}
