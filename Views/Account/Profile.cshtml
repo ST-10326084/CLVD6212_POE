@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Customer Profile";
+    bool isLoggedIn = false; // Replace with actual authentication check
+                             // Implement your authentication check logic here
+                             // For now, it simulates checking if the user is logged in
+                             // You can replace this with a real check against your authentication system.
+    isLoggedIn = CheckIfUserIsLoggedIn();
+}
+
+<h3>@ViewBag.Title</h3>
+
+<div class="profile-options">
+    @if (isLoggedIn)
+    {
+        <button onclick="location.href='@Url.Action("PreviousOrders", "Account")'">Previous Orders</button>
+        <button onclick="location.href='@Url.Action("EditProfile", "Account")'">Edit Profile</button>
+        <button onclick="location.href='@Url.Action("Logout", "Account")'">Logout</button>
+    }
+    else
+    {
+        <button onclick="location.href='@Url.Action("Login", "Account")'">Login</button>
+        <button onclick="location.href='@Url.Action("Signup", "Account")'">Signup</button>
+        <button onclick="location.href='@Url.Action("ForgotPassword", "Account")'">Forgot Password</button>
+    }
+    }
+
+    @functions {
+        private bool CheckIfUserIsLoggedIn()
+        {
+            // Simulate a user authentication check
+            // In a real application, this would involve checking a token, session, etc.
+            return false; // Set to true if the user is logged in
+        }
+    }

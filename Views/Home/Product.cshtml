@@ -1,0 +1,33 @@
+﻿@model List<Product>
+
+@{
+    ViewBag.Title = "Our Collection";
+}
+
+<link href="~/css/ProductPage.css" rel="stylesheet" />
+
+<div class="product-page">
+    <h2>@ViewBag.Title</h2>
+    <div class="product-grid">
+        @foreach (var product in Model)
+        {
+            <div class="product-card">
+                <img src="@Url.Content(product.ImageUrl)" alt="@product.Name" />
+                <h3>@product.Name</h3>
+                <p>@product.Description</p>
+                <p class="price">@product.Price.ToString("C")</p>
+                <button>Add to Cart</button>
+            </div>
+        }
+    </div>
+</div>
+
+@functions {
+    public class Product
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        public string ImageUrl { get; set; }
+    }
+}
