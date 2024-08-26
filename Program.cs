@@ -1,10 +1,15 @@
 using Azure.Storage.Blobs;
 using Microsoft.Extensions.Azure;
+using System;
+using Microsoft.Extensions.Configuration;
+using Azure.Storage.Queues;
+using Azure.Core.Extensions;
 
 class Program
 {
     private static void Main(string[] args)
     {
+       
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
@@ -44,5 +49,11 @@ class Program
             pattern: "{controller=Home}/{action=Index}/{id?}");
 
         app.Run();
+    }
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddControllersWithViews();
+        // Other service configurations
     }
 }

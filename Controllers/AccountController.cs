@@ -84,3 +84,14 @@ namespace CLVD6212_POE.Controllers
     }
 
 
+public class MyService
+{
+    private readonly string _storageConnectionString;
+
+    public MyService(IConfiguration configuration)
+    {
+        _storageConnectionString = configuration["Azure Storage"];
+    }
+
+    // Use _storageConnectionString as needed
+}
